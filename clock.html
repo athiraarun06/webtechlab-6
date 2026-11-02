@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LUMIÈRE | Studio Clock</title>
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            letter-spacing: 4px;
+        }
+        #time {
+            font-size: 55px;
+            color: #d6b98c;
+            letter-spacing: 5px;
+        }
+        p {
+            color: #999;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LUMIÈRE.</h1>
+    <p>PHOTOGRAPHY STUDIO</p>
+
+    <h2>Studio Time</h2>
+    <div id="time"></div>
+
+    <script>
+        function display() {
+            var d = new Date();
+
+            var hour = String(d.getHours()).padStart(2, '0');
+            var minute = String(d.getMinutes()).padStart(2, '0');
+            var second = String(d.getSeconds()).padStart(2, '0');
+
+            document.getElementById("time").innerHTML =
+                hour + ":" + minute + ":" + second;
+        }
+
+        display();
+        setInterval(display, 1000);
+    </script>
+
+</body>
+</html>

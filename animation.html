@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LUMIÈRE | Camera Animation</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            letter-spacing: 5px;
+        }
+
+        #container {
+            width: 90%;
+            max-width: 700px;
+            height: 130px;
+            margin: 50px auto;
+            position: relative;
+            background: #292929;
+            border-bottom: 3px solid #c9b99b;
+            overflow: hidden;
+        }
+
+        #camera {
+            position: absolute;
+            left: 0px;
+            top: 35px;
+            font-size: 55px;
+        }
+
+        button {
+            padding: 12px 30px;
+            margin: 10px;
+            border: none;
+            background: #c9b99b;
+            color: #111;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LUMIÈRE.</h1>
+    <p>CAMERA MOTION STUDIO</p>
+
+    <div id="container">
+        <div id="camera">📷</div>
+    </div>
+
+    <button onclick="moveRight()">MOVE</button>
+    <button onclick="stop()">STOP</button>
+
+    <script>
+        var camera;
+        var animate;
+        var position = 0;
+
+        function init() {
+            camera = document.getElementById("camera");
+            camera.style.left = "0px";
+        }
+
+        function moveRight() {
+            clearTimeout(animate);
+
+            function frame() {
+                if (position >= 620) {
+                    clearTimeout(animate);
+                }
+                else {
+                    position++;
+                    camera.style.left = position + "px";
+                    animate = setTimeout(frame, 10);
+                }
+            }
+
+            frame();
+        }
+
+        function stop() {
+            clearTimeout(animate);
+        }
+
+        window.onload = init;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LUMIÈRE | Typography</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Georgia, serif;
+            text-align: center;
+            padding: 130px 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            letter-spacing: 5px;
+        }
+
+        #para1 {
+            font-size: 18px;
+            color: #c9b99b;
+            margin-top: 50px;
+            transition: font-size 0.4s;
+            cursor: pointer;
+        }
+
+        .subtitle {
+            color: #888;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LUMIÈRE.</h1>
+    <p class="subtitle">WORDS BEHIND THE LENS</p>
+
+    <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
+        "Photography is the art of capturing moments."
+    </p>
+
+    <script>
+        function incSize() {
+            document.getElementById("para1").style.fontSize = "32px";
+        }
+
+        function decSize() {
+            document.getElementById("para1").style.fontSize = "18px";
+        }
+    </script>
+
+</body>
+</html>

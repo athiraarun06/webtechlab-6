@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LUMIÈRE | Creative Team</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            letter-spacing: 5px;
+        }
+
+        #result {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #222;
+            border: 1px solid #555;
+            padding: 25px;
+            width: 230px;
+            text-align: left;
+        }
+
+        .card h2 {
+            color: #c9b99b;
+        }
+
+        .card p {
+            color: #ccc;
+        }
+
+        .category {
+            color: #c9b99b !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LUMIÈRE.</h1>
+    <p>OUR CREATIVE TEAM</p>
+
+    <h2>Photographer Details</h2>
+
+    <div id="result"></div>
+
+    <script>
+        var students = [
+            { name: "ATHIRA", regno: "URK24CS9012", year: 1995 },
+            { name: "ARUN", regno: "UR24CS1298", year: 1998 },
+            { name: "SREEJA", regno: "URK23CS9012", year: 2002 },
+            { name: "SREEJITH", regno: "URK21BM2012", year: 2004 }
+        ];
+
+        var output = "";
+
+        for (var i = 0; i < students.length; i++) {
+
+            output += "<div class='card'>";
+
+            output += "<h2>" + students[i].name + "</h2>";
+
+            output += "<p>" + students[i].name +
+                "'s Register Number is " +
+                students[i].regno + "</p>";
+
+            output += "<p>Year of Birth: " +
+                students[i].year + "</p>";
+
+            if (students[i].year < 2000) {
+                output += "<p class='category'>Born Before 2000</p>";
+            }
+            else {
+                output += "<p class='category'>Born In or After 2000</p>";
+            }
+
+            output += "</div>";
+        }
+
+        document.getElementById("result").innerHTML = output;
+    </script>
+
+</body>
+</html>
+
